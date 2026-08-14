@@ -25,6 +25,10 @@ La aplicación permite enviar una imagen de un perro al servicio de inteligencia
 - Carga de imágenes para realizar predicciones.
 - Visualización del resultado de la predicción.
 
+## Razas que puede predecir
+
+["Beagle", "Bulldog frances", "Chihuahua", "Dalmata", "Doberman", "Dogo argentino", "Golden retriever", "Lobo siberiano", "Pastor aleman", "Rottweiler"]
+
 ## Arquitectura del proyecto
 
 El proyecto está dividido principalmente en dos componentes:
@@ -239,4 +243,9 @@ El proyecto busca aplicar conocimientos de:
 - Integración entre modelos de IA y aplicaciones web.
 
 Además de utilizar el modelo entrenado, una parte importante del proyecto fue la recopilación, organización y preparación del dataset utilizado para realizar el entrenamiento.
+<img width="1919" height="1027" alt="image" src="https://github.com/user-attachments/assets/044ade5b-98b0-48ec-90b3-c7a05744e933" />
+<img width="1919" height="1028" alt="image" src="https://github.com/user-attachments/assets/7a53e89c-c7e7-4a28-ac54-fda0797b83a2" />
+<img width="1919" height="1025" alt="image" src="https://github.com/user-attachments/assets/24d7b1eb-d88e-4e22-82c4-d780fb2b4baa" />
+<img width="1919" height="1026" alt="image" src="https://github.com/user-attachments/assets/f1c05e2a-647c-463e-90fb-5511d4e2b909" />
+<img width="1917" height="1025" alt="image" src="https://github.com/user-attachments/assets/dfbcb1bc-077f-467b-87e4-c37a2f94569d" />
 
