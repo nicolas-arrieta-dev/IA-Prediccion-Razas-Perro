@@ -30,66 +30,73 @@ La aplicación permite enviar una imagen de un perro al servicio de inteligencia
 El proyecto está dividido principalmente en dos componentes:
 
 ```text
-IA-Prediccion-Razas-Perro
+IA-Prediccion-Razas-Perro/
 │
-├── Frontend
+├── Frontend/
 │   └── Next.js + React
 │
-└── IA
+└── ia/
     ├── Modelo de inteligencia artificial
     ├── API Flask
     ├── Dataset
     └── Scripts de entrenamiento
 ```
 
-##Frontend
+## Frontend
 
-El frontend fue desarrollado utilizando Next.js, React y TypeScript.
+El frontend fue desarrollado utilizando **Next.js, React y TypeScript**.
 
 La interfaz incorpora diferentes efectos visuales y animaciones para mejorar la experiencia del usuario, incluyendo un sistema de partículas para la presentación visual de la aplicación.
 
-##Backend de Inteligencia Artificial
+## Backend de Inteligencia Artificial
 
-El backend de IA fue desarrollado utilizando Python.
+El backend de IA fue desarrollado utilizando **Python**.
 
-El sistema utiliza TensorFlow y Keras para cargar y ejecutar el modelo entrenado.
+El sistema utiliza **TensorFlow y Keras** para cargar y ejecutar el modelo entrenado.
 
-La comunicación entre la aplicación web y el modelo se realiza mediante una API desarrollada con Flask.
+La comunicación entre la aplicación web y el modelo se realiza mediante una API desarrollada con **Flask**.
 
-Tecnologías
-Frontend
-Next.js 15
-React 19
-TypeScript
-Tailwind CSS
-Framer Motion
-tsparticles
-Lucide React
-@hello-pangea/dnd
-Inteligencia Artificial
-Python
-TensorFlow
-Keras
-OpenCV
-NumPy
-Pillow
-Flask
-Flask-CORS
-Modelo
+## Tecnologías utilizadas
 
-El modelo de inteligencia artificial fue desarrollado utilizando redes neuronales convolucionales (CNN) para realizar la clasificación de imágenes.
+### Frontend
 
-Durante el desarrollo se utilizaron componentes de TensorFlow/Keras como:
+- Next.js 15
+- React 19
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- tsParticles
+- Lucide React
+- @hello-pangea/dnd
 
-Conv2D
-MaxPooling2D
-Flatten
-Dense
-Dropout
-Adam
-ImageDataGenerator
+### Inteligencia Artificial y Backend
 
-Dataset
+- Python
+- TensorFlow
+- Keras
+- OpenCV
+- NumPy
+- Pillow
+- Flask
+- Flask-CORS
+
+## Modelo de Inteligencia Artificial
+
+El modelo de inteligencia artificial fue desarrollado utilizando **redes neuronales convolucionales (CNN)** para realizar la clasificación de imágenes.
+
+Durante el desarrollo se utilizaron diferentes componentes de TensorFlow/Keras, entre ellos:
+
+- Conv2D
+- MaxPooling2D
+- Flatten
+- Dense
+- Dropout
+- Adam
+- ImageDataGenerator
+
+El modelo recibe una imagen como entrada, realiza el procesamiento correspondiente y genera una predicción sobre la raza del perro.
+
+## Dataset
 
 Uno de los principales componentes del proyecto fue la creación y preparación del dataset utilizado para entrenar el modelo.
 
@@ -97,51 +104,146 @@ Las imágenes fueron recopiladas y organizadas según las diferentes razas de pe
 
 El proceso incluyó:
 
-Recopilación de imágenes.
-Organización de las imágenes por categorías.
-Preparación del dataset.
-Procesamiento de imágenes.
-Generación de datos para el entrenamiento.
-Entrenamiento y evaluación del modelo.
+1. Recopilación de imágenes.
+2. Organización de las imágenes por categorías.
+3. Preparación del dataset.
+4. Procesamiento de imágenes.
+5. Generación de datos para el entrenamiento.
+6. Entrenamiento y evaluación del modelo.
 
 Debido al tamaño del dataset, las imágenes utilizadas para el entrenamiento no se incluyen directamente en este repositorio.
 
-API de Inteligencia Artificial
+## API de Inteligencia Artificial
 
-El proyecto utiliza Flask para crear una API que permite utilizar el modelo desde el frontend.
+El proyecto utiliza **Flask** para crear una API que permite utilizar el modelo de inteligencia artificial desde el frontend.
 
 La API recibe una imagen, realiza el procesamiento necesario y utiliza el modelo entrenado para obtener la predicción.
-se encuentra en el archivo Api_IA.py ese ejecuta ese archivo y esta listo para escuchar las peticiones de la vista
-en la carpeta /ia también se encuentran odas los archivos de prueba y los archivos con las instrucciones con las que se entreno el modelo
 
+El servicio se encuentra en:
 
-Instalación
-Requisitos
+```text
+ia/Api_IA.py
+```
+
+El archivo `Api_IA.py` es el punto de entrada de la API. Al ejecutarlo, el servicio queda disponible para recibir las peticiones realizadas desde la aplicación web.
+
+Dentro de la carpeta `ia/` también se encuentran los archivos utilizados durante el desarrollo del proyecto, incluyendo archivos de prueba, scripts y archivos con las instrucciones y configuraciones utilizadas para entrenar el modelo.
+
+## Instalación
+
+### Requisitos
 
 Para ejecutar el proyecto se recomienda tener instalado:
 
-Node.js
-npm
-Python 3
-Git
-1. Clonar el repositorio
-2. Configurar el frontend
-3. npm install
-4. npm run dev
+- Node.js
+- npm
+- Python 3
+- Git
 
-Luego en consola
-1. cd ia
-2. python Api_IA.py
+## 1. Clonar el repositorio
 
-Objetivo del proyecto
+```bash
+git clone https://github.com/nicolas-arrieta-dev/IA-Prediccion-Razas-Perro.git
+```
+
+Ingresar a la carpeta del proyecto:
+
+```bash
+cd IA-Prediccion-Razas-Perro
+```
+
+## 2. Configurar el Frontend
+
+Instalar las dependencias:
+
+```bash
+npm install
+```
+
+Ejecutar el proyecto:
+
+```bash
+npm run dev
+```
+
+El frontend estará disponible normalmente en:
+
+```text
+http://localhost:3000
+```
+
+## 3. Ejecutar la API de Inteligencia Artificial
+
+Abrir otra terminal y dirigirse a la carpeta `ia`:
+
+```bash
+cd ia
+```
+
+Ejecutar la API:
+
+```bash
+python Api_IA.py
+```
+
+Una vez ejecutado `Api_IA.py`, el backend de inteligencia artificial queda disponible para recibir las peticiones realizadas por el frontend.
+
+## Flujo de funcionamiento
+
+El funcionamiento general de la aplicación es:
+
+```text
+┌────────────────────────────┐
+│      Usuario               │
+│   Carga una imagen         │
+└─────────────┬──────────────┘
+              │
+              ▼
+┌────────────────────────────┐
+│      Next.js Frontend      │
+│       localhost:3000       │
+└─────────────┬──────────────┘
+              │
+              │ HTTP / API
+              ▼
+┌────────────────────────────┐
+│       Flask API            │
+│       Api_IA.py            │
+└─────────────┬──────────────┘
+              │
+              ▼
+┌────────────────────────────┐
+│      Modelo CNN            │
+│    TensorFlow / Keras      │
+└─────────────┬──────────────┘
+              │
+              ▼
+┌────────────────────────────┐
+│   Raza predicha            │
+└────────────────────────────┘
+```
+
+## Objetivo del proyecto
 
 El objetivo del proyecto es desarrollar y entrenar un modelo de inteligencia artificial capaz de reconocer diferentes razas de perros a partir de imágenes.
 
-El proyecto busca aplicar conocimientos de inteligencia artificial, visión por computadora, procesamiento de imágenes y desarrollo web, integrando un modelo de aprendizaje automático dentro de una aplicación web.
+El proyecto busca aplicar conocimientos de:
 
-Además de utilizar un modelo previamente entrenado, una parte importante del proyecto fue la recopilación, organización y preparación del dataset utilizado para realizar el entrenamiento.
+- Inteligencia artificial.
+- Aprendizaje automático.
+- Visión por computadora.
+- Procesamiento de imágenes.
+- Redes neuronales convolucionales.
+- Desarrollo de APIs.
+- Desarrollo web.
+- Integración entre modelos de IA y aplicaciones web.
 
+Además de utilizar el modelo entrenado, una parte importante del proyecto fue la recopilación, organización y preparación del dataset utilizado para realizar el entrenamiento.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Despliegue
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+El frontend desarrollado con Next.js puede ser desplegado utilizando plataformas compatibles con aplicaciones Next.js, como Vercel.
+
+Para desplegar la aplicación es necesario tener en cuenta que el backend de inteligencia artificial desarrollado con Flask debe estar disponible en un servidor accesible por el frontend.
+
+El frontend y la API de IA deben estar correctamente configurados para comunicarse entre sí mediante HTTP.
