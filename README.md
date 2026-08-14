@@ -240,10 +240,3 @@ El proyecto busca aplicar conocimientos de:
 
 Además de utilizar el modelo entrenado, una parte importante del proyecto fue la recopilación, organización y preparación del dataset utilizado para realizar el entrenamiento.
 
-## Despliegue
-
-El frontend desarrollado con Next.js puede ser desplegado utilizando plataformas compatibles con aplicaciones Next.js, como Vercel.
-
-Para desplegar la aplicación es necesario tener en cuenta que el backend de inteligencia artificial desarrollado con Flask debe estar disponible en un servidor accesible por el frontend.
-
-El frontend y la API de IA deben estar correctamente configurados para comunicarse entre sí mediante HTTP.
